@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gratitudinal</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'vue_app', media: 'all'%>
+    <%= javascript_pack_tag 'vue_app' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <div id="app">
+      <p>
+        <router-link to="/gratitudes/1">Go to skate</router-link>
+        <router-link to="/gratitudes/2">Go to other</router-link>
+      </p>
+      <router-view></router-view>
+
+    </div>
+  </body>
+</html>
+
