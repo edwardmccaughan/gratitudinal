@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @gratitude.user_id %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @gratitude.body %>
+</p>
+
+<%= link_to 'Edit', edit_gratitude_path(@gratitude) %> |
+<%= link_to 'Back', gratitudes_path %>
