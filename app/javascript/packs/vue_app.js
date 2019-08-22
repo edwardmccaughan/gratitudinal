@@ -11,12 +11,14 @@ import VueRouter from 'vue-router'
 
 
 import GratitudeShow from '../components/GratitudeShow.vue'
+import GratitudeIndex from '../components/GratitudeIndex.vue'
 
 Vue.use(VueRouter)
 
 
 const routes = [
-  { path: '/gratitudes/:id', component: GratitudeShow }
+  { path: '/gratitudes/:id', component: GratitudeShow },
+  { path: '/gratitudes', component: GratitudeIndex }
 ]
 
 const router = new VueRouter({ routes })
