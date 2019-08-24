@@ -9,7 +9,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex';
 
-import store from '../store.js'
+import store from '../stores/store.js'
 
 import GratitudeShow from '../components/GratitudeShow.vue'
 import GratitudeIndex from '../components/GratitudeIndex.vue'

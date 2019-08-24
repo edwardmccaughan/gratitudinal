@@ -12,15 +12,15 @@
   export default {
     computed: {
       counter(){
-        return this.$store.state.counter.counter
+        return this.$store.state.CounterStore.counter
       },
       double(){
-        return this.$store.getters["counter/doubleClicks"]
+        return this.$store.getters["CounterStore/doubleClicks"]
       }
     },
     methods: {
       clicked() {
-        this.$store.commit("counter/increment")
+        this.$store.commit("CounterStore/increment")
       }
     }
   }
