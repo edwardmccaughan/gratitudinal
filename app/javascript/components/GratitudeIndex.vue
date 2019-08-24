@@ -11,19 +11,30 @@
 
 <script>
   import axios from 'axios'
+  import Counter from './Counter'
 
   export default {
+
     props: {
       gratitudes: { required: false}
     },
-    mounted() {
-      const url = `/gratitudes.json`
-      console.log("url",url)
-      axios.get(url)
-        .then(response => {
-          console.log( response.data)
-          this.gratitudes = response.data
-        })
+    components: {
+      Counter
+    },
+    methods: {
+      indexGratitudes(){
+        this.$store.dispatch('getGratitudes');
+      }
+
     }
+    // mounted() {
+    //   const url = `/gratitudes.json`
+    //   console.log("url",url)
+    //   axios.get(url)
+    //     .then(response => {
+    //       console.log( response.data)
+    //       this.gratitudes = response.data
+    //     })
+    // }
   }
 </script>
