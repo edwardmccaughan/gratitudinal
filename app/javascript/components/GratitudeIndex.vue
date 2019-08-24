@@ -10,9 +10,6 @@
 </template>
 
 <script>
-  import axios from 'axios'
-  import Counter from './Counter'
-
   export default {
     data() {
       return this.$store.state.gratitudes

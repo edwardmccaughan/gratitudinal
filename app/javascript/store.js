@@ -27,19 +27,27 @@ const gratitudes_module = {
   namespaced: true,
   state: {
     gratitudes: [],
-    apiUrl: 'http://localhost:3000/gratitudes.json'
+    gratitude: {}
   },
   mutations: {
-    setGratitudes(state,payload) {
+    many(state,payload) {
       state.gratitudes = payload
+    },
+    one(state, payload){
+      state.gratitude = payload
     }
   },
   actions: {
-    index(state, query) {
+    index(context, query) {
       const url =  'gratitudes.json'
-      axios.get(url)
-      .then(response => {
-        state.commit('setGratitudes', response.data);
+      axios.get(url).then(response => {
+        context.commit('many', response.data);
+      })
+    },
+    show(context, id) {
+      const url =  `gratitudes/${id}.json`
+      axios.get(url).then(response => {
+        context.commit('one', response.data);
       })
     }
   }
