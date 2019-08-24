@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const counter_module = {
   state: {
     counter: 0
   },
@@ -18,5 +18,20 @@ export default new Vuex.Store({
     doubleClicks: state => {
       return state.counter * 2
     }
+  }
+}
+
+const gratitudes_module = {
+  state: {
+    gratitudes: []
+  }
+}
+
+
+
+export default new Vuex.Store({
+  modules: {
+    counter: counter_module,
+    gratitudes: gratitudes_module
   }
 })

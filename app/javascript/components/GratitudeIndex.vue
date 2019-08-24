@@ -14,27 +14,11 @@
   import Counter from './Counter'
 
   export default {
-
-    props: {
-      gratitudes: { required: false}
+    data() {
+      return this.$store.state.gratitudes
     },
-    components: {
-      Counter
-    },
-    methods: {
-      indexGratitudes(){
-        this.$store.dispatch('getGratitudes');
-      }
-
+    mounted() {
+      this.$store.dispatch('gratitudes/index');
     }
-    // mounted() {
-    //   const url = `/gratitudes.json`
-    //   console.log("url",url)
-    //   axios.get(url)
-    //     .then(response => {
-    //       console.log( response.data)
-    //       this.gratitudes = response.data
-    //     })
-    // }
   }
 </script>
