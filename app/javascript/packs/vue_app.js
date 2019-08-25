@@ -10,22 +10,13 @@ import VueRouter from 'vue-router'
 import Vuex from 'vuex';
 
 import store from '../stores/store.js'
+import routes from '../routes.js'
 
-import GratitudeShow from '../components/GratitudeShow.vue'
-import GratitudeIndex from '../components/GratitudeIndex.vue'
-import GratitudeNew from '../components/GratitudeNew.vue'
 import Counter from '../components/Counter.vue'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.config.productionTip = false
-
-
-const routes = [
-  { path: '/gratitudes/new', component: GratitudeNew },
-  { path: '/gratitudes/:id', component: GratitudeShow },
-  { path: '/gratitudes', component: GratitudeIndex },
-]
 
 const router = new VueRouter({ routes })
 

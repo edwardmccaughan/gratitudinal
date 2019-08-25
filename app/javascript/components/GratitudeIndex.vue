@@ -12,10 +12,10 @@
 <script>
   export default {
     data() {
-      return this.$store.state.gratitudes
+      return this.$store.state.GratitudesStore
     },
     mounted() {
-      this.$store.dispatch('gratitudes/index');
+      this.$store.dispatch('GratitudesStore/index');
     }
   }
 </script>

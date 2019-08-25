@@ -1,24 +1,24 @@
 <template>
-  <form method="post" action="/gratitudes">
-    <input type="hidden" name="authenticity_token" :value="csrf">
-
+  <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
     <div class="field">
       <label> Today I am gratful for:</label>
-      <input type="text" name="gratitude[body]">
-      <input type="text" name="gratitude[user_id]" value="1">
+       <input type="text" v-model="gratitude.body" class="form-control">
     </div>
-
-    <button type="submit">Submit</button>
+    <input type="submit" value="save" />
   </form>
 
 </template>
-
 <script>
   export default {
-    data: () => {
-      return ({
-        csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-      })
+    data() {
+      return this.$store.state.GratitudesStore
+    },
+    methods: {
+      create() {
+        this.$store.dispatch('GratitudesStore/create',this.gratitude).then((response) => {
+          this.$router.push(`/gratitudes/${response.data.id}`)
+        })
+      }
     }
   }
 </script>
