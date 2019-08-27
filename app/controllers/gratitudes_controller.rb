@@ -1,8 +1,9 @@
 class GratitudesController < ApplicationController
   before_action :set_gratitude, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @gratitudes = Gratitude.all
+    @gratitudes = current_user.gratitudes
   end
 
   def show
@@ -17,7 +18,7 @@ class GratitudesController < ApplicationController
 
   def create
     @gratitude = Gratitude.new(gratitude_params)
-
+    @gratitude.user = current_user
     respond_to do |format|
       if @gratitude.save
         format.html { redirect_to @gratitude, notice: 'Gratitude was successfully created.' }
