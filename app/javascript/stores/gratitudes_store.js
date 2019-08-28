@@ -17,6 +17,7 @@ export default {
   },
   mutations: {
     many(state,payload) {
+      console.log('set many')
       state.gratitudes = payload
     },
     one(state, payload){
@@ -40,11 +41,30 @@ export default {
         context.commit('many', response.data);
       })
     },
+    index_today(context, query) {
+      const url =  'gratitudes.json?today=true'
+      axios.get(url).then(response => {
+        context.commit('many', response.data);
+      })
+    },
     show(context, id) {
       const url =  `gratitudes/${id}.json`
       axios.get(url).then(response => {
         context.commit('one', response.data);
       })
+    }
+  },
+  getters: {
+    split_gratitudes_by_date(state) {
+      return state.gratitudes.reduce(function(accumulator, currentValue, currentIndex, array) {
+        const date = currentValue.created_at.split("T")[0]
+        if (accumulator[date] === undefined ) {
+          accumulator[date] = [currentValue]
+        } else {
+          accumulator[date].push(currentValue)
+        }
+        return accumulator
+      }, {});
     }
   }
 }

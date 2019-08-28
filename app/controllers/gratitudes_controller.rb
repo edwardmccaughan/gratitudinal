@@ -3,7 +3,11 @@ class GratitudesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @gratitudes = current_user.gratitudes
+    @gratitudes = if params[:today]
+      gratitudes_scope.where('created_at > ?', 24.hours.ago)
+    else
+      gratitudes_scope
+    end
   end
 
   def show
@@ -57,5 +61,9 @@ class GratitudesController < ApplicationController
 
     def gratitude_params
       params.require(:gratitude).permit(:user_id, :body)
+    end
+
+    def gratitudes_scope
+      current_user.gratitudes.order(created_at: :desc)
     end
 end
