@@ -1,0 +1,14 @@
+TODO:
+
+* add pagination to full gratitudes list
+* add 'it has been x days since you last told us what you're grateful for'
+* add push notification reminders
+* linting
+* logout button
+* i18n
+
+maybe:
+* facebook/gmail login
+* docker
+* some kind of buddy mode?
+* offline sync (https://medium.com/daily-now/optimistic-offline-first-apps-with-vuex-d8a412e105a7)

@@ -12,15 +12,25 @@
   <body>
     <%= yield %>
     <div id="app">
-      <p>
-        <router-link :to="{ name: 'gratidutes_path'}">show all gratitudes</router-link>
-        <router-link :to="{ name: 'new_gratidute_path'}">new</router-link>
-        <router-link :to="{ name: 'daily_gratidutes_path'}">daily</router-link>
-      </p>
-      <router-view></router-view>
 
-      <hr>
-      <counter></counter>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        
+        <router-link :to="{ name: 'gratidutes_path'}" class="navbar-brand">Gratitudinal</router-link>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <router-link :to="{ name: 'daily_gratidutes_path'}" class="nav-link">daily</router-link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <router-view></router-view>
+      </div>
     </div>
   </body>
 </html>

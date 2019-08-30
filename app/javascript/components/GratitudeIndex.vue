@@ -1,11 +1,15 @@
 <template>
   <div>
-    all gratitudes:
-    <div v-for="gratitudes in gratitudes_split_by_date">
-      <hr>
-      {{ gratitudes[0].created_at.split("T")[0]}}
-      <div v-for="gratitude in gratitudes">
-        <div>{{ gratitude.body }}</div>
+    <h1>I have been grateful for:</h1>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 40rem;" v-for="gratitudes in gratitudes_split_by_date">
+      <div class="card-header">{{ gratitudes[0].created_at.split("T")[0]}}</div>
+        <div class="card-body">
+          <p class="card-text">
+            <ul v-for="gratitude in gratitudes">
+            <li>{{ gratitude.body }}</li>
+          </ul>
+        </p>
       </div>
     </div>
   </div>

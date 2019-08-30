@@ -17,7 +17,6 @@ export default {
   },
   mutations: {
     many(state,payload) {
-      console.log('set many')
       state.gratitudes = payload
     },
     one(state, payload){
