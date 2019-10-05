@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
+gem 'webpush'
+gem 'serviceworker-rails'
+
 group :development, :test do
   gem 'byebug'
 end
