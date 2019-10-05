@@ -1,13 +1,5 @@
 import axios from 'axios';
-
-// TODO: this could be in a global helper
-const headers = () => {
-  const token = document.querySelector('[name="csrf-token"]') || {content: 'no-csrf-token'}
-  return { 
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': token.content 
-        }
-}
+import headers from '../services/csrf_headers.js'
 
 export default {
   namespaced: true,

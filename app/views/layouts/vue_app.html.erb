@@ -14,7 +14,8 @@
     <script>
       window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64("BMGa8j8aqbLIVYFqbY_B2EKjJi6crIYR3to9l5YTz38ea-I17L_G_T7rY8R6kukBnsonpTSMwkfNDrqZXE82mZ8=").bytes %>);
     </script>
-    <button id="notification">send push</button>
+    <button id="notification">register push</button>
+    <button id="notification2">send push</button>
 
     <%= yield %>
     <div id="app">
