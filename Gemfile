@@ -14,6 +14,7 @@ gem 'devise'
 
 gem 'webpush'
 gem 'serviceworker-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'

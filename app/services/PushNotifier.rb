@@ -15,8 +15,8 @@ class PushNotifier
       auth: user.push_notification_auth_key,
       vapid: {
         subject: "mailto:sender@example.com",
-        public_key: "BMGa8j8aqbLIVYFqbY_B2EKjJi6crIYR3to9l5YTz38ea-I17L_G_T7rY8R6kukBnsonpTSMwkfNDrqZXE82mZ8=", # TODO: env variable
-        private_key: "EYn4R33sDL9Bzyw4sO3rrWlcrGUIRBy_MzteA83y7Bc="
+        public_key: ENV['VAPID_PUBLIC_KEY'],
+        private_key: ENV['VAPID_PRIVATE_KEY']
       },
       ssl_timeout: 5,
       open_timeout: 5,

@@ -5,10 +5,6 @@ export default class PushNotifications {
   constructor() {
     this.request_notification_permissions()
     this.register_service_worker()
-
-    console.log('adding listeners')
-    document.getElementById("notification").addEventListener("click", this.register.bind(this)) 
-    document.getElementById("notification2").addEventListener("click", this.test.bind(this)) 
   }
 
   register_service_worker(){
@@ -22,16 +18,16 @@ export default class PushNotifications {
 
   request_notification_permissions(){
     if (!("Notification" in window)) {
-       console.error("This browser does not support desktop notification");
+       console.error("[push] This browser does not support desktop notification");
      }
      else if (Notification.permission === "granted") {
-       console.log("Permission to receive notifications has been granted");
+       console.log("[push] Permission to receive notifications has been granted");
        this.subscribe();
      }
      else if (Notification.permission !== 'denied') {
-       Notification.requestPermission(function (permission) {                    
+       Notification.requestPermission((permission) => {
          if (permission === "granted") {
-           console.log("Permission to receive notifications has been granted");
+           console.log("[push] Permission to receive notifications has been granted");
            this.subscribe();                                                       
          } 
        });
@@ -44,12 +40,14 @@ export default class PushNotifications {
       .subscribe({
         userVisibleOnly: true,
         applicationServerKey: window.vapidPublicKey
+      }).then(() => { 
+        this.register()
       });
     });
   }
 
   register(){
-    console.log('registering')
+    console.log('[push] registering')
     navigator.serviceWorker.ready
     .then((serviceWorkerRegistration) => {
       serviceWorkerRegistration.pushManager.getSubscription()
@@ -62,9 +60,7 @@ export default class PushNotifications {
   }
 
   test() {
-    console.log('testing')
+    console.log('[push] testing')
     axios.post('/push_notifications/test', {}, {headers: headers()} )
   }
-
-
 }
