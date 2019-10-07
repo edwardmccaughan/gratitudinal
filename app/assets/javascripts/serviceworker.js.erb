@@ -12,3 +12,9 @@ self.addEventListener("push", (event) => {
     })
   );
 });
+
+self.addEventListener('notificationclick', function(event) {
+  console.log('On notification click: ', event.notification.tag);
+  event.notification.close();
+  return clients.openWindow('/vue_app');
+});

@@ -17,7 +17,9 @@ gem 'serviceworker-rails'
 gem 'dotenv-rails'
 gem "haml-rails"
 
+
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'byebug'
 end
 
@@ -29,5 +31,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
 end
 
