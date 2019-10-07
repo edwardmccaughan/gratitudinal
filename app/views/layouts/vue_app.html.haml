@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title gratitudinal
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'vue_app', media: 'all'
+    = javascript_pack_tag 'vue_app'
+    = render "js_env_variables"
+    %link{:href => "/manifest.json", :rel => "manifest"}/
+  %body
+    = yield
+    #app
+      %nav.navbar.navbar-expand-sm.navbar-light.bg-light
+        %router-link.navbar-brand{":to" => "{ name: 'gratidutes_path'}"} Gratitudinal
+        %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          %ul.navbar-nav.mr-auto
+            %li.nav-item
+              %router-link.nav-link{":to" => "{ name: 'daily_gratidutes_path'}"} daily
+      .container
+        %router-view
