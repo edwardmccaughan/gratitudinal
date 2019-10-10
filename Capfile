@@ -24,4 +24,6 @@ require "capistrano/passenger"
 # before 'deploy', 'rvm1:install:ruby'
 # before 'deploy', 'rvm1:install:gems'
 
+set :linked_files, %w{config/master.key}
+
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
