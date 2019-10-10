@@ -25,6 +25,12 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "capistrano"
+  # gem "rvm-capistrano"
+  gem 'rvm1-capistrano3', require: false
+  gem "capistrano-passenger"
+  gem "capistrano-yarn"
+  gem "capistrano-rails"
 end
 
 group :test do
