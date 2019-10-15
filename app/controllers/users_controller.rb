@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :set_user
   def show
-    @user = current_user
   end
 
   def update
     respond_to do |format|
-      if current_user.update(user_params)
+      if @user.update(user_params)
         format.html { redirect_to @user, notice: 'user was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -18,6 +17,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def user_params
     params.require(:user).permit(:reminders_enabled)

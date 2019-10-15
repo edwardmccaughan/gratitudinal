@@ -1,8 +1,8 @@
 <template>
   <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
     <div class="field">
-      <label> Today I am gratful for:</label>
-       <input type="text" v-model="gratitude.body" class="form-control">
+      <label> Today I am grateful for:</label>
+      <input type="text" v-model="gratitude.body" class="form-control">
     </div>
     <input type="submit" value="save" />
   </form>

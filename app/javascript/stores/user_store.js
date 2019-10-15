@@ -17,6 +17,12 @@ export default {
       axios.get(url).then(response => {
         context.commit('one', response.data)
       })
+    },
+    update(context, user) {
+      const url = `user.json`
+      axios.put(url, user, {headers: headers()} ).then(response => {
+        context.commit('one', response.data)
+      })
     }
   }
 }
