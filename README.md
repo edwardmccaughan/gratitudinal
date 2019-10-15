@@ -1,24 +1,8 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Gratitudinal
 
-Things you may want to cover:
+Gratitudinal is a site to help you remember to stay grateful to the good things in life.
+Keep a daily record of the positive things that brought you joy today and get reminded if you haven't been keeping on top of your habit.
 
-* Ruby version
+currently hosted at https://gratitudinal.herokuapp.com
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

@@ -8,5 +8,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container
+
+    %nav.navbar.navbar-expand-sm.navbar-light.bg-light
+      = link_to "gratitudinal", root_path, class: 'navbar-brand'
+
+
+    .container.mt-3
       = yield

@@ -1,1 +1,14 @@
-%a.btn.btn-success{:href => "/vue_app#/"} vue app
+.homepage
+  .row
+    .col-md.mb-3
+      Gratitudinal is a site to help you remember to stay grateful to the good things in life.
+      %br
+
+      Keep a daily record of the positive things that brought you joy today and get reminded if you haven't been keeping on top of your habit.
+      %br
+
+      = link_to "Log In", new_user_session_path, class: "btn btn-success"
+      = link_to "Sign Up", new_user_registration_path, class: "btn btn-primary"
+    .col-md
+
+      = image_tag 'homepage_preview.png', class: 'preview'
