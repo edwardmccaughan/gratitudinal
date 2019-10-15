@@ -8,4 +8,5 @@ export default [
   { path: '/gratitudes/:id', component: GratitudeShow, name: 'gratidute_path' },
   { path: '/gratitudes', component: GratitudeIndex, name: 'gratidutes_path' },
   { path: '/gratitudes_daily', component: GratitudeDailyInterface, name: 'daily_gratidutes_path' },
+  { path: '/',redirect: '/gratitudes_daily'}
 ]

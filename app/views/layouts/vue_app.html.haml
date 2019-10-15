@@ -20,5 +20,12 @@
           %ul.navbar-nav.mr-auto
             %li.nav-item
               %router-link.nav-link{":to" => "{ name: 'daily_gratidutes_path'}"} daily
+          %ul.navbar-nav 
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle{href: "#", id:"navbarDropdown", role: "button", "data-toggle"=> "dropdown" }
+                = image_tag('user', style: "height: 2em")
+              .dropdown-menu.dropdown-menu-right
+                .dropdown-item
+                  = link_to('Logout', destroy_user_session_path, method: :delete)
       .container
         %router-view
