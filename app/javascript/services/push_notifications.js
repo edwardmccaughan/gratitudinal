@@ -31,6 +31,8 @@ export default class PushNotifications {
            this.subscribe();                                                       
          } 
        });
+    } else {
+      console.log("[push] something went wrong requestiing push notification permission")
     }
   }
 
