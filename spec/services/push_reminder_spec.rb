@@ -9,6 +9,7 @@ RSpec.describe PushReminder do
   let(:user_with_reminders_on_and_no_recent_gratitudes) do
     user = create :user, reminders_enabled: true
     create :gratitude, user: user, created_at: 1.day.ago
+    create :gratitude, user: user, created_at: 1.day.ago
     user
   end
   
@@ -34,7 +35,7 @@ RSpec.describe PushReminder do
   subject{ described_class.new.call }
 
   it 'sends to users who have notifications enabled and no gratitudes within 24 hours' do
-    expect(PushNotifier).to receive(:push_message).with(user_with_reminders_on_and_no_recent_gratitudes, anything)
+    expect(PushNotifier).to receive(:push_message).with(user_with_reminders_on_and_no_recent_gratitudes, anything).exactly(:once)
     expect(PushNotifier).not_to receive(:push_message).with(user_with_reminders_on_and_recent_gratitudes, anything)
     expect(PushNotifier).not_to receive(:push_message).with(user_with_reminders_off_and_recent_gratitudes, anything)
     expect(PushNotifier).not_to receive(:push_message).with(user_with_reminders_off_and_no_recent_gratitudes, anything)

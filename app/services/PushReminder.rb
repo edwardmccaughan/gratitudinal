@@ -8,6 +8,6 @@ class PushReminder
   private
 
   def users_needing_reminder
-    User.where(reminders_enabled: true).joins(:gratitudes).where.not('gratitudes.created_at > ?', 1.day.ago)
+    User.where(reminders_enabled: true).joins(:gratitudes).where.not('gratitudes.created_at > ?', 1.day.ago).uniq
   end
 end
