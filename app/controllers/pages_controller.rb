@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def vue_app
     render :layout => 'vue_app'
   end
+
+  def exception_test
+    raise 'I am an exception'
+  end
 end

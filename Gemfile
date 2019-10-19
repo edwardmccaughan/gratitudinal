@@ -40,3 +40,6 @@ group :test do
   gem 'rspec-rails'
 end
 
+group :production do
+  gem 'exception_notification'
+end
