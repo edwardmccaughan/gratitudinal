@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "viewport", "content" => "width=device-width, initial-scale=1"}
+
     %title gratitudinal
     = csrf_meta_tags
     = csp_meta_tag
@@ -9,6 +11,8 @@
     = javascript_pack_tag 'vue_app'
     = render "js_env_variables"
     %link{:href => "/manifest.json", :rel => "manifest"}/
+
+
   %body
     = yield
     #app
