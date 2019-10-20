@@ -22,9 +22,12 @@
           %span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
           %ul.navbar-nav.mr-auto
-            %li.nav-item
+            %li.nav-item.ml-2
               %router-link.nav-link{":to" => "{ name: 'daily_gratidutes_path'}"}
-                daily
+                be grateful
+            %li.nav-item.ml-2
+              %router-link.nav-link{":to" => "{ name: 'gratidutes_path'}"}
+                see gratitudes
           %ul.navbar-nav 
             %li.nav-item.dropdown
               %a.nav-link.dropdown-toggle{href: "#", id:"navbarDropdown", role: "button", "data-toggle"=> "dropdown" }
