@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :gratitudes
+  resources :gratitudes, only: [:index, :create, :destroy]
   resource :user, only: [:show, :update]
 
   get "/vue_app" => "pages#vue_app", as: 'vue_app'

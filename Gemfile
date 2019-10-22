@@ -37,7 +37,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'rspec-rails'
+  # there is a rails 6 request spec bug in the rspec-rails 3.9 release, for now use the 4.0 preview
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-maintenance'
 end
 
 group :production do

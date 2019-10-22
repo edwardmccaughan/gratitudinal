@@ -10,16 +10,6 @@ class GratitudesController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def new
-    @gratitude = Gratitude.new
-  end
-
-  def edit
-  end
-
   def create
     @gratitude = Gratitude.new(gratitude_params)
     @gratitude.user = current_user
@@ -29,18 +19,6 @@ class GratitudesController < ApplicationController
         format.json { render :show, status: :created, location: @gratitude }
       else
         format.html { render :new }
-        format.json { render json: @gratitude.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @gratitude.update(gratitude_params)
-        format.html { redirect_to @gratitude, notice: 'Gratitude was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gratitude }
-      else
-        format.html { render :edit }
         format.json { render json: @gratitude.errors, status: :unprocessable_entity }
       end
     end

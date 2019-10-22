@@ -4,5 +4,6 @@ FactoryBot.define do
       "user_#{n}@example.com"
     end
     password { "password" }
+    reminders_enabled { false }
   end
 end

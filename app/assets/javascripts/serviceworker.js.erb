@@ -1,13 +1,11 @@
 self.addEventListener("push", (event) => {
   const title = (event.data && event.data.text().split("-")[0]) || "Message recieved";
   const body = event.data.text().split("-")[1];
-  const tag = "push-simple-demo-notification-tag";
-  const icon = 'logo.png';
+  const tag = "gratitudinal-reminder";
 
   event.waitUntil(
     self.registration.showNotification(title, {
       body: body,
-      icon: icon,
       tag: tag
     })
   );
